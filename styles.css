@@ -1,7 +1,87 @@
-.headline {
+body {
   font-family: 'Cantata One', sans-serif;
 }
 
-.title {
-  font-family: 'Pinyon Script', cursive;
+form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
+
+.headline {
+  font-size: 16pt;
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 36pt;
+}
+
+.container {
+  margin: auto;
+  max-width: 768px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.item-container {
+  flex: 1;
+  max-width: 33.33%;
+  display: flex;
+}
+
+@media only screen and (max-width: 450px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item-container {
+    max-width: none;
+    width: 75%;
+  }
+}
+
+.item {
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(212, 234, 255, 0.445);
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.item--purchased {
+  border: 2px solid green;
+  background-color: lightgreen;
+}
+
+.item--selected:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 8px;
+  border: 2px solid slateblue;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: darkslateblue;
+}
+
+.progress-bar-container {
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
