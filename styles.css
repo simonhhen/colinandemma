@@ -1,7 +1,7 @@
-h1 {
-  font-family: sans-serif;
+.headline {
+  font-family: 'Cantata One', sans-serif;
 }
 
-h2 {
-  font-family: 'Alex Brush', cursive;
+.title {
+  font-family: 'Pinyon Script', cursive;
 }
