@@ -4,21 +4,19 @@
       Colin and Emma's House Fill-up
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cantata+One&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cantata+One&family=Open+Sans&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
       <h1 class="headline">Colin and Emma’s</h1>
-      <h2 class="title">House Fill-up Form</h2>
+      <h2 class="title">House Fill-up Form</h2> 
+      <div class="instructions-container" id="instructions-container">
+        <p class="instructions">Please select an item you would like to contibute to, then enter your name and the amount you wish to contribute below.</p>
+      </div>
       <div id="item-container"></div>
-      <form>
-        <label>Name</label>
-        <input type="text" placeholder="Name">
-        <label>Contribution amount</label>
-        <input type="number" placeholder="0">
-        <button type="submit">Submit</button>
-      </form>
+      <div id="form-container" class="form-container">
+      </div>
     </div>
   </body>
   <script type="text/javascript" src="script.js"></script>

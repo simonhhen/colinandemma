@@ -1,96 +1,202 @@
-const items = [
-    {
-        name: 'item 1',
-        id: 'item-0',
-        imgSource: 'imageSource',
-        price: 250,
-        raised: 0,
-    },
-    {
-        name: 'item 2',
-        id: 'item-1',
-        imgSource: 'imageSource',
-        price: 120,
-        raised: 50,
-    },
-    {
-        name: 'item 3',
-        id: 'item-2',
-        imgSource: 'imageSource',
-        price: 400,
-        raised: 400,
-    },
-    {
-        name: 'item 4',
-        id: 'item-3',
-        imgSource: 'imageSource',
-        price: 100,
-        raised: 50,
-    },
-    {
-        name: 'item 5',
-        id: 'item-4',
-        imgSource: 'imageSource',
-        price: 100,
-        raised: 50,
-    },
-]
+const allItems = {};
+const TEXT = {
+    NO_SELECTION: `<span class="lower-emphasis">Please select an item above.</span>`
+};
+
+var HttpClient = function() {
+    this.get = function(url) {
+        return new Promise(function(resolve, reject) {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function() { 
+                if (request.readyState == 4 && request.status == 200) {
+                    resolve(JSON.parse(request.response));
+                }
+            }
+
+            request.open("GET", url, true);            
+            request.send(null);
+        });
+    }
+    this.post = function(url, data) {
+        return new Promise(function(resolve, reject) {
+            var request = new XMLHttpRequest();
+            request.open("POST", url);      
+            request.setRequestHeader('Content-Type', 'application/json');  
+            request.send(JSON.stringify(data));
+
+            request.onload = () => {
+                console.log(request.responseText);
+                resolve(JSON.parse(request.response));
+            }
+        })
+    }
+    this.put = function(url, data) {
+        return new Promise(function(resolve, reject) {
+            var request = new XMLHttpRequest();
+            request.open("PUT", url);      
+            request.setRequestHeader('Content-Type', 'application/json');  
+            request.send(JSON.stringify(data));
+
+            request.onload = () => {
+                console.log(request.responseText);
+                resolve(JSON.parse(request.response));
+            }
+        })
+    }
+}
+
+function formatTally(item) {
+    return `${item.raised}/${item.price}`;
+}
+
+var client = new HttpClient();
+let selected;
+let selectedItemStatus;
+let active = true;
+
+function removedSelectedItem() {
+    document.getElementById(selected)?.classList.remove('item--selected');
+    selectedItemStatus.innerText = TEXT.NO_SELECTION; 
+    selected = null;
+}
+
+function addSelectedItem(item) {
+    item.classList.toggle('item--selected');
+
+    selectedItemStatus.innerText = `You have selected to contribute to: ${allItems[item.id].name}`;
+    selected = item.id;
+}
 
 function clickHandler(event) {
-    if (this.selected === event.currentTarget.id) {
+    if (!active) return;
+    if (selected === event.currentTarget.id) {
+        removedSelectedItem();
         return;
     }
-    if (this.selected) {
-        document.getElementById(this.selected).classList.toggle('item-selected');
+    if (selected) {
+        removedSelectedItem();
     }
-    event.currentTarget.classList.toggle('item--selected');
-    this.selected = event.currentTarget.id;
+    addSelectedItem(event.currentTarget);
+}
+
+function addContribution() {
+    if (!selected) return;
+    const id = selected;
+    const name = document.getElementById('contribution-name').value;
+    const amount = parseInt(document.getElementById('contribution-amount').value);
+    
+    client.post('http://localhost:3000/contributions', {
+        id,
+        name,
+        amount
+    }).then((response) => {
+        const item = allItems[response.id];
+        item.raised += response.amount;
+        const data = {
+            raised: item.raised,
+        };
+        client.put(`http://localhost:3000/items/${item._id}`, data).then((response) => {
+            const progressBar = document.getElementById(`progress-bar-${response.id}`);
+            progressBar.style.width = `${response.raised/response.price*100}%`;
+
+            const fundsRaised = document.getElementById(`funds-raised-${response.id}`)
+            if (response.raised >= response.price) {
+                fundsRaised.innerText = 'Purchased!';
+                selected = null;
+                document.getElementById(response.id).classList.toggle('item--selected');
+                document.getElementById(response.id).classList.add('item--purchased');
+            } else {
+                fundsRaised.innerText = formatTally(response);
+            }
+            active = false;
+            removedSelectedItem();
+            showThankYou();
+        })
+    });
+}
+
+function showForm() {
+    document.getElementById('form-container').innerHTML = `
+        <form>
+            <label>Selected item</label>
+            <div id="selected-item" class="selected-item">${TEXT.NO_SELECTION}</div>
+            <label>Name</label>
+            <input type="text" placeholder="Name" id="contribution-name">
+            <label>Contribution amount</label>
+            <input type="number" placeholder="0" id="contribution-amount">
+            <button type="button" id="submit-button">Submit</button>
+        </form>
+    `;
+    selectedItemStatus = document.getElementById('selected-item');
+}
+function showThankYou() {
+    document.getElementById('form-container').innerHTML= "";
+    document.getElementById('instructions-container').innerHTML = `
+        <h3>Thank you for your contribution!<h3>
+    `;
 }
 
 const containerNode = document.getElementById('item-container');
 
 let currentRow;
 
-for (let c = 0; c < items.length; c++) {
-    let element = items[c];
-    const itemContainer = document.createElement('div');
-    itemContainer.className = 'item-container';
-    const item = document.createElement('div');
-    item.className = 'item';
-    item.id = `item-${c}`;
-    item.addEventListener('click', clickHandler);
+client.get('http://localhost:3000/items').then((items) => {
+    for (let c = 0; c < items.length; c++) {
+        let element = items[c];
+        const itemContainer = document.createElement('div');
+        itemContainer.className = 'item-container';
+        const item = document.createElement('div');
+        item.className = 'item';
+        item.id = element.id;
+        item.addEventListener('click', clickHandler);
 
-    const title = document.createElement('h3');
-    title.className = 'item-title';
-    title.innerText = element.name;
-    
-    const fundsRaised = document.createElement('span');
-    if (element.raised === element.price) {
-        fundsRaised.innerText = 'Purchased!';
-        item.className += ' item--purchased'
-    } else {
-        fundsRaised.innerText = `${element.raised}/${element.price}`;
+        const title = document.createElement('h3');
+        title.className = 'item-title';
+        title.innerText = element.name;
+        
+        const raisedDetails = document.createElement('div');
+        raisedDetails.className = 'raised-details';
+
+        const fundsRaised = document.createElement('span');
+        fundsRaised.id = `funds-raised-${element.id}`;
+        if (element.raised >= element.price) {
+            fundsRaised.innerText = 'Purchased!';
+            item.className += ' item--purchased'
+        } else {
+            fundsRaised.innerText = formatTally(element);
+        }
+
+        const progressBar = document.createElement('div');
+        progressBar.id = `progress-bar-${element.id}`;
+        progressBar.className = 'progress-bar';
+
+        const percentRaised = element.raised/element.price;
+        progressBar.style.width = `${(percentRaised >= 1 ? 1 : percentRaised)*100}%`;
+
+        const progressBarContainer = document.createElement('div');
+        progressBarContainer.className = 'progress-bar-container';
+        progressBarContainer.appendChild(progressBar);
+        
+        item.appendChild(title);
+        raisedDetails.appendChild(fundsRaised);
+        raisedDetails.appendChild(progressBarContainer);
+        item.appendChild(raisedDetails)
+
+        itemContainer.appendChild(item);
+
+        if (c % 3 === 0) {
+            currentRow = document.createElement('div');
+            currentRow.className = 'row';
+            containerNode.appendChild(currentRow);
+        }
+
+        allItems[element.id] = element;
+        
+        currentRow.appendChild(itemContainer);
     }
+});
 
-    const progressBar = document.createElement('div');
-    progressBar.className = 'progress-bar';
-    progressBar.style.width = `${element.raised/element.price*100}%`;
+showForm();
 
-    const progressBarContainer = document.createElement('div');
-    progressBarContainer.className = 'progress-bar-container';
-    progressBarContainer.appendChild(progressBar);
-    
-    item.appendChild(title);
-    item.appendChild(fundsRaised);
-    item.appendChild(progressBarContainer);
-
-    itemContainer.appendChild(item);
-
-    if (c % 3 === 0) {
-        currentRow = document.createElement('div');
-        currentRow.className = 'row';
-        containerNode.appendChild(currentRow);
-    }
-
-    currentRow.appendChild(itemContainer);
-}
+const submitButton = document.getElementById('submit-button');
+submitButton.addEventListener('click', addContribution);

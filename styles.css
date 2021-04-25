@@ -1,8 +1,61 @@
 body {
-  font-family: 'Cantata One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(14, 34, 70);
+}
+
+::placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  margin-top: 48pt;
+  margin-bottom: 8pt;
+  font-family: 'Cantata One', serif;
+}
+
+h2 {
+  margin-top: 8pt;
+}
+
+label {
+  font-family: 'Cantata One', serif;
+  margin: 24pt 0 16pt;
+  color: rgb(30, 62, 121);
+  font-size: 16pt;
+}
+
+input {
+  font-size: 12pt;
+  margin: -8pt -10pt;
+  padding: 8pt;
+  border: solid 2pt lightgray;
+  border-radius: 8pt;
+}
+
+button {
+  font-family: 'Cantata One', serif;
+  font-size: 16pt;
+  margin: 36pt -10pt;
+  padding: 8pt;
+  color: white;
+  background-color: rgb(30, 62, 121);
+  border: solid 2pt rgb(14, 34, 70);
+  border-radius: 8pt;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+button:hover {
+  background-color: rgb(14, 34, 70);
+}
+
+.form-container {
+  margin: auto;
+  max-width: 494px;
 }
 
 form {
+  margin-top: 8pt;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -34,6 +87,14 @@ form {
   display: flex;
 }
 
+.item-title {
+  font-family: 'Cantata One', serif;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 450px) {
   .row {
     flex-direction: column;
@@ -47,18 +108,27 @@ form {
 }
 
 .item {
+  display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgba(212, 234, 255, 0.445);
+  background-color: rgba(30, 62, 121, 0.08);
   padding: 8px;
   margin: 8px;
   border-radius: 8px;
   position: relative;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: rgba(30, 62, 121, 0.2);
+  transition: background-color 0.1s;
 }
 
 .item--purchased {
-  border: 2px solid green;
-  background-color: lightgreen;
+  color: white;
+  border: 2px solid rgb(14, 34, 70);
+  background-color: rgb(30, 62, 121);
+  cursor: auto;
 }
 
 .item--selected:after {
@@ -70,12 +140,32 @@ form {
   left: 0;
   right: 0;
   border-radius: 8px;
-  border: 2px solid slateblue;
+  border: 2px solid rgb(30, 62, 121);
+}
+
+.selected-item {
+  font-size: 12pt;
+}
+
+.instructions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24pt 0 16pt;
+}
+
+.instructions {
+  font-size: 12pt;
+  line-height: 1.5;
+  max-width: 375px;
+  margin: 0;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: darkslateblue;
+  background-color: rgb(30, 62, 121);
+  transition: width 1s;
+  transition-timing-function: ease-in-out;
 }
 
 .progress-bar-container {
@@ -85,3 +175,7 @@ form {
   background-color: rgba(255, 255, 255, 0.75);
 }
 
+.lower-emphasis {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+}
