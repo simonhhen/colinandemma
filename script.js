@@ -2,6 +2,7 @@ const allItems = {};
 const TEXT = {
     NO_SELECTION: `<span class="lower-emphasis">Please select an item above.</span>`
 };
+const SERVER_NAME = "https://warm-savannah-04835.herokuapp.com/";
 
 var HttpClient = function() {
     this.get = function(url) {
@@ -20,7 +21,7 @@ var HttpClient = function() {
     this.post = function(url, data) {
         return new Promise(function(resolve, reject) {
             var request = new XMLHttpRequest();
-            request.open("POST", url);      
+            request.open("POST", `${SERVER_NAME}/${url}`);      
             request.setRequestHeader('Content-Type', 'application/json');  
             request.send(JSON.stringify(data));
 
@@ -33,7 +34,7 @@ var HttpClient = function() {
     this.put = function(url, data) {
         return new Promise(function(resolve, reject) {
             var request = new XMLHttpRequest();
-            request.open("PUT", url);      
+            request.open("PUT", `${SERVER_NAME}/${url}`);      
             request.setRequestHeader('Content-Type', 'application/json');  
             request.send(JSON.stringify(data));
 
@@ -85,7 +86,7 @@ function addContribution() {
     const name = document.getElementById('contribution-name').value;
     const amount = parseInt(document.getElementById('contribution-amount').value);
     
-    client.post('http://localhost:3000/contributions', {
+    client.post('contributions', {
         id,
         name,
         amount
@@ -95,7 +96,7 @@ function addContribution() {
         const data = {
             raised: item.raised,
         };
-        client.put(`http://localhost:3000/items/${item._id}`, data).then((response) => {
+        client.put(`items/${item._id}`, data).then((response) => {
             const progressBar = document.getElementById(`progress-bar-${response.id}`);
             progressBar.style.width = `${response.raised/response.price*100}%`;
 
