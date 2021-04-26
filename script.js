@@ -14,14 +14,14 @@ var HttpClient = function() {
                 }
             }
 
-            request.open("GET", url, true);            
+            request.open("GET", `${SERVER_NAME}${url}`, true);            
             request.send(null);
         });
     }
     this.post = function(url, data) {
         return new Promise(function(resolve, reject) {
             var request = new XMLHttpRequest();
-            request.open("POST", `${SERVER_NAME}/${url}`);      
+            request.open("POST", `${SERVER_NAME}${url}`);      
             request.setRequestHeader('Content-Type', 'application/json');  
             request.send(JSON.stringify(data));
 
@@ -34,7 +34,7 @@ var HttpClient = function() {
     this.put = function(url, data) {
         return new Promise(function(resolve, reject) {
             var request = new XMLHttpRequest();
-            request.open("PUT", `${SERVER_NAME}/${url}`);      
+            request.open("PUT", `${SERVER_NAME}${url}`);      
             request.setRequestHeader('Content-Type', 'application/json');  
             request.send(JSON.stringify(data));
 
@@ -141,7 +141,7 @@ const containerNode = document.getElementById('item-container');
 
 let currentRow;
 
-client.get('http://localhost:3000/items').then((items) => {
+client.get('items').then((items) => {
     for (let c = 0; c < items.length; c++) {
         let element = items[c];
         const itemContainer = document.createElement('div');
