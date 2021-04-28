@@ -3,6 +3,13 @@ body {
   color: rgb(14, 34, 70);
 }
 
+.icon {
+  position: absolute;
+  top: 6pt;
+  right: 6pt;
+  visibility: hidden;
+}
+
 ::placeholder {
   font-family: 'Open Sans', sans-serif;
 }
@@ -136,6 +143,10 @@ form {
   cursor: auto;
 }
 
+.item--purchased .icon {
+  visibility: visible;
+}
+
 .item--purchased .item-image {
   opacity: 0.5;
 }
@@ -154,6 +165,10 @@ form {
   right: 0;
   border-radius: 8px;
   border: 2px solid rgb(30, 62, 121);
+}
+
+.item--selected .icon {
+  visibility: visible;
 }
 
 .selected-item {
@@ -197,3 +212,4 @@ form {
   font-style: italic;
   color: rgba(0, 0, 0, 0.6);
 }
+

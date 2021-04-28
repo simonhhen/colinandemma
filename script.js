@@ -3,6 +3,10 @@ const TEXT = {
     NO_SELECTION: `<span class="lower-emphasis">Please select an item above.</span>`
 };
 const SERVER_NAME = "https://warm-savannah-04835.herokuapp.com/";
+const checkMark = document.createElement('i');
+checkMark.className = "far fa-check-circle icon selected-icon";
+const tagMark = document.createElement('i');
+tagMark.className = "fas fa-tag icon purchased-icon";
 
 var HttpClient = function() {
     this.get = function(url) {
@@ -172,6 +176,7 @@ client.get('items').then((items) => {
         const image = document.createElement('img');
         image.className = `item-image`;
         image.src = `images/${element.imgSource}`;
+        imageContainer.appendChild(tagMark);
         imageContainer.appendChild(image);
 
         const progressBar = document.createElement('div');
@@ -185,6 +190,7 @@ client.get('items').then((items) => {
         progressBarContainer.className = 'progress-bar-container';
         progressBarContainer.appendChild(progressBar);
         
+        item.appendChild(checkMark);
         item.appendChild(title);
         item.appendChild(imageContainer);
         raisedDetails.appendChild(fundsRaised);
