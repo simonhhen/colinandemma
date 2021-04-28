@@ -167,6 +167,12 @@ client.get('items').then((items) => {
             fundsRaised.innerText = formatTally(element);
         }
 
+        const imageContainer = document.createElement('div');
+        const image = document.createElement('img');
+        image.className = `item-image`;
+        image.src = `/images/lawn-mower.jpg`;
+        imageContainer.appendChild(image);
+
         const progressBar = document.createElement('div');
         progressBar.id = `progress-bar-${element.id}`;
         progressBar.className = 'progress-bar';
@@ -179,6 +185,7 @@ client.get('items').then((items) => {
         progressBarContainer.appendChild(progressBar);
         
         item.appendChild(title);
+        item.appendChild(imageContainer);
         raisedDetails.appendChild(fundsRaised);
         raisedDetails.appendChild(progressBarContainer);
         item.appendChild(raisedDetails)
