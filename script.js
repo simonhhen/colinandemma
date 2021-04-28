@@ -169,8 +169,9 @@ client.get('items').then((items) => {
         }
 
         const imageContainer = document.createElement('div');
+        imageContainer.className = 'image-container';
         const image = document.createElement('img');
-        image.className = `item-image`;
+        image.className = 'item-image';
         image.src = `images/${element.imgSource}`;
         const tagMark = document.createElement('i');
         tagMark.className = "fas fa-tag icon purchased-icon";

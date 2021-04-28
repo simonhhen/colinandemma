@@ -8,6 +8,7 @@ body {
   top: 6pt;
   right: 6pt;
   visibility: hidden;
+  font-size: 16pt;
 }
 
 ::placeholder {
@@ -143,7 +144,11 @@ form {
   cursor: auto;
 }
 
-.item--purchased .icon {
+.purchased-icon {
+  color: rgb(14, 34, 70);
+}
+
+.item--purchased .purchased-icon {
   visibility: visible;
 }
 
@@ -167,12 +172,16 @@ form {
   border: 2px solid rgb(30, 62, 121);
 }
 
-.item--selected .icon {
+.item--selected .selected-icon {
   visibility: visible;
 }
 
 .selected-item {
   font-size: 12pt;
+}
+
+.image-container {
+  position: relative;
 }
 
 .funds-raised {
