@@ -135,6 +135,7 @@ form {
 .item-image {
   width: 100%;
   margin-bottom: 6pt;
+  border-radius: 4px;
 }
 
 .item--purchased {
@@ -150,6 +151,7 @@ form {
 
 .item--purchased .purchased-icon {
   visibility: visible;
+  color: white;
 }
 
 .item--purchased .item-image {

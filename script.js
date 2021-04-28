@@ -1,4 +1,5 @@
 const allItems = {};
+const purchased = [];
 const TEXT = {
     NO_SELECTION: `<span class="lower-emphasis">Please select an item above.</span>`
 };
@@ -70,7 +71,7 @@ function addSelectedItem(item) {
 
 function clickHandler(event) {
     if (!active) return;
-    if (selected === event.currentTarget.id) {
+    if (selected === event.currentTarget.id || purchased.includes(event.currentTarget.id)) {
         removedSelectedItem();
         return;
     }
@@ -102,6 +103,7 @@ function addContribution() {
 
             const fundsRaised = document.getElementById(`funds-raised-${response.id}`)
             if (response.raised >= response.price) {
+                purchased.push(response.id);
                 fundsRaised.innerText = 'Purchased!';
                 selected = null;
                 document.getElementById(response.id).classList.toggle('item--selected');
@@ -162,6 +164,7 @@ client.get('items').then((items) => {
         fundsRaised.className = 'funds-raised';
         fundsRaised.id = `funds-raised-${element.id}`;
         if (element.raised >= element.price) {
+            purchased.push(element.id);
             fundsRaised.innerText = 'Purchased!';
             item.className += ' item--purchased'
         } else {
