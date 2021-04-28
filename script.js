@@ -58,7 +58,7 @@ let active = true;
 
 function removedSelectedItem() {
     document.getElementById(selected)?.classList.remove('item--selected');
-    selectedItemStatus.innerText = TEXT.NO_SELECTION; 
+    selectedItemStatus.innerHTML = TEXT.NO_SELECTION; 
     selected = null;
 }
 
