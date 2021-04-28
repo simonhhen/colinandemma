@@ -170,7 +170,7 @@ client.get('items').then((items) => {
         const imageContainer = document.createElement('div');
         const image = document.createElement('img');
         image.className = `item-image`;
-        image.src = `images/electric-mower.jpg`;
+        image.src = `images/${element.imgSource}`;
         imageContainer.appendChild(image);
 
         const progressBar = document.createElement('div');
