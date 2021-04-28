@@ -201,8 +201,9 @@ form {
 .instructions {
   font-size: 12pt;
   line-height: 1.5;
-  max-width: 375px;
+  max-width: 480px;
   margin: 0;
+  text-align: left;
 }
 
 .progress-bar {
@@ -224,3 +225,6 @@ form {
   color: rgba(0, 0, 0, 0.6);
 }
 
+.bold {
+  font-weight: 900;
+}
