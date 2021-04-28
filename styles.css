@@ -126,6 +126,7 @@ form {
 
 .item-image {
   width: 100%;
+  margin-bottom: 6pt;
 }
 
 .item--purchased {
@@ -135,7 +136,7 @@ form {
   cursor: auto;
 }
 
-.item--purchased > .item-image {
+.item--purchased .item-image {
   opacity: 0.5;
 }
 
@@ -157,6 +158,11 @@ form {
 
 .selected-item {
   font-size: 12pt;
+}
+
+.funds-raised {
+  margin-bottom: 3pt;
+  display: block;
 }
 
 .instructions-container {

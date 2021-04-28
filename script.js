@@ -159,6 +159,7 @@ client.get('items').then((items) => {
         raisedDetails.className = 'raised-details';
 
         const fundsRaised = document.createElement('span');
+        fundsRaised.className = 'funds-raised';
         fundsRaised.id = `funds-raised-${element.id}`;
         if (element.raised >= element.price) {
             fundsRaised.innerText = 'Purchased!';
