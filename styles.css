@@ -40,7 +40,7 @@ input {
   border-radius: 8pt;
 }
 
-button {
+.button {
   font-family: 'Cantata One', serif;
   font-size: 16pt;
   margin: 36pt -10pt;
@@ -51,9 +51,12 @@ button {
   border-radius: 8pt;
   cursor: pointer;
   transition: background-color 0.1s;
+  display: block;
+  text-align: center;
+  text-decoration: none;
 }
 
-button:hover {
+.button:hover {
   background-color: rgb(14, 34, 70);
 }
 
@@ -196,6 +199,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin: 24pt 0 16pt;
+  text-align: left;
 }
 
 .instructions {
@@ -203,7 +207,6 @@ form {
   line-height: 1.5;
   max-width: 480px;
   margin: 0;
-  text-align: left;
 }
 
 .progress-bar {

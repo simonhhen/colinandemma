@@ -113,7 +113,7 @@ function addContribution() {
             }
             active = false;
             removedSelectedItem();
-            showThankYou();
+            showThankYou(response.name, amount);
         })
     });
 }
@@ -127,15 +127,26 @@ function showForm() {
             <input type="text" placeholder="Name" id="contribution-name">
             <label>Contribution amount</label>
             <input type="number" placeholder="0" id="contribution-amount">
-            <button type="button" id="submit-button">Submit</button>
+            <button class="button" type="button" id="submit-button">Submit</button>
         </form>
     `;
     selectedItemStatus = document.getElementById('selected-item');
 }
-function showThankYou() {
+function showThankYou(name, amount) {
+    window.scrollTo(0, 0);
     document.getElementById('form-container').innerHTML= "";
-    document.getElementById('instructions-container').innerHTML = `
-        <h3>Thank you for your contribution!<h3>
+    document.getElementById('instructions').innerHTML = `
+        <h3>Thank you for contributing $${amount} toward “${name}”!</h3>
+        <p><b>Reminder:</b></p><p><b>Contributions can be made by cheque or etransfer to:</b></p>
+        <address>Emma Henderson or Colin Graham<br/>
+        2134 Rushton Rd<br/>
+        Ottawa, ON<br/>
+        K2A 1N7
+        </address>
+        <p>Or</p>
+        <p>emma.henderson@rogers.com</p>
+        <p>If you have any questions, please reach out to Simon, Kate, or Janine D. or to the bride or groom. We are very happy to help! Thank you for your kind generosity. Looking forward to the big day!</p>
+        <a href="http://theknot.com/colinandemma" class="button">Return to Colin and Emma's Wedding Website</a>
     `;
 }
 
@@ -216,6 +227,5 @@ client.get('items').then((items) => {
 });
 
 showForm();
-
 const submitButton = document.getElementById('submit-button');
 submitButton.addEventListener('click', addContribution);
