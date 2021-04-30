@@ -231,3 +231,30 @@ form {
 .bold {
   font-weight: 900;
 }
+
+.loading-container {
+  margin: 56pt 0;
+}
+
+.loader {
+  height: 48pt;
+  width: 48pt;
+  border-radius: 50%;
+  display: inline-block;
+  background: 
+  conic-gradient(white, white) padding-box,
+     conic-gradient(white 10%, rgb(30, 62, 121) 61.8%) border-box;
+  border: 10px solid transparent;
+  animation: rotation 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
