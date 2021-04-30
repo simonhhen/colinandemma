@@ -155,6 +155,7 @@ const containerNode = document.getElementById('item-container');
 let currentRow;
 
 client.get('items').then((items) => {
+    containerNode.removeChild();
     for (let c = 0; c < items.length; c++) {
         let element = items[c];
         const itemContainer = document.createElement('div');
