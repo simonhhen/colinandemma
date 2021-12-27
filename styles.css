@@ -1,6 +1,13 @@
+@font-face {
+  font-family: 'denalova Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('denalova Regular'), url('typefaces/denalova.woff') format('woff');
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #6D712E;
+  color: rgb(89, 106, 97);
 }
 
 .icon {
@@ -16,19 +23,19 @@ body {
 }
 
 h1 {
-  margin-top: 48pt;
   margin-bottom: 8pt;
+  margin-top: 0pt;
   font-family: 'Cantata One', serif;
 }
 
 h2 {
-  margin-top: 8pt;
+  margin: 0pt;
 }
 
 label {
   font-family: 'Cantata One', serif;
   margin: 24pt 0 16pt;
-  color: rgb(30, 62, 121);
+  color: rgb(89, 106, 97);
   font-size: 16pt;
 }
 
@@ -46,18 +53,18 @@ input {
   margin: 36pt -10pt;
   padding: 8pt;
   color: white;
-  background-color: rgb(30, 62, 121);
-  border: solid 2pt rgb(14, 34, 70);
+  background-color: rgba(89, 106, 97, 0.8);
   border-radius: 8pt;
   cursor: pointer;
   transition: background-color 0.1s;
   display: block;
   text-align: center;
   text-decoration: none;
+  border: none;
 }
 
 .button:hover {
-  background-color: rgb(14, 34, 70);
+  background-color: rgb(89, 106, 97);
 }
 
 .form-container {
@@ -72,13 +79,24 @@ form {
   flex-direction: column;
 }
 
+.heading {
+  background-image: url('decorations/Floralgreeneryframe.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: contain; 
+  display: flex;
+  flex-direction: column;
+  padding-top: 106pt;
+  padding-bottom: 106pt;
+}
+
 .headline {
   font-size: 16pt;
 }
 
 .title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 36pt;
+  font-family:'denalova Regular', cursive;
+  font-size: 42pt;
 }
 
 .container {
@@ -243,7 +261,7 @@ form {
   display: inline-block;
   background: 
   conic-gradient(white, white) padding-box,
-     conic-gradient(white 10%, rgb(30, 62, 121) 61.8%) border-box;
+     conic-gradient(white 10%, rgb(89, 106, 97) 61.8%) border-box;
   border: 10px solid transparent;
   animation: rotation 1s;
   animation-timing-function: linear;
