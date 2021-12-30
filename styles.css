@@ -149,7 +149,7 @@ form {
 }
 
 .item:not(.item--purchased):hover {
-  background-color: rgba(30, 62, 121, 0.2);
+  background-color: rgba(89, 106, 97, 0.2);
   transition: background-color 0.1s;
 }
 
