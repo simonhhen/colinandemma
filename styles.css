@@ -148,7 +148,7 @@ form {
   cursor: pointer;
 }
 
-.item:hover {
+.item:not(.item--purchased):hover {
   background-color: rgba(30, 62, 121, 0.2);
   transition: background-color 0.1s;
 }
@@ -161,8 +161,8 @@ form {
 
 .item--purchased {
   color: white;
-  border: 2px solid rgb(14, 34, 70);
-  background-color: rgb(30, 62, 121);
+  border: 2px solid rgb(89, 106, 97);
+  background-color: rgb(89, 106, 97);
   cursor: auto;
 }
 
@@ -180,7 +180,7 @@ form {
 }
 
 .item--purchased:hover {
-  background-color: rgb(30, 62, 121);
+  background-color: rgb(89, 106, 97);
 }
 
 .item--selected:after {
@@ -192,7 +192,7 @@ form {
   left: 0;
   right: 0;
   border-radius: 8px;
-  border: 2px solid rgb(30, 62, 121);
+  border: 2px solid rgb(89, 106, 97);
 }
 
 .item--selected .selected-icon {
@@ -229,7 +229,7 @@ form {
 
 .progress-bar {
   height: 100%;
-  background-color: rgb(30, 62, 121);
+  background-color: rgb(89, 106, 97);
   transition: width 1s;
   transition-timing-function: ease-in-out;
 }
