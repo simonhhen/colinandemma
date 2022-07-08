@@ -138,15 +138,16 @@ function showThankYou(name, amount) {
     document.getElementById('instructions').innerHTML = `
         <h3>Thank you for contributing $${amount} toward “${name}”!</h3>
         <p><b>Reminder:</b></p><p><b>Contributions can be made by cheque or etransfer to:</b></p>
-        <address>Emma Henderson or Colin Graham<br/>
-        2134 Rushton Rd<br/>
-        Ottawa, ON<br/>
-        K2A 1N7
+        <address>Kate Henderson or Ben Segal Daly<br/>
+        1319 26th Avenue E<br/>
+        Vancouver, BC<br/>
+        V5V 2J9
         </address>
         <p>Or</p>
-        <p>emma.henderson@rogers.com</p>
-        <p>If you have any questions, please reach out to Simon, Kate, or Janine D. or to the bride or groom. We are very happy to help! Thank you for your kind generosity. Looking forward to the big day!</p>
-        <a href="http://theknot.com/colinandemma" class="button">Return to Colin and Emma's Wedding Website</a>
+        <p>hendersondkate@gmail.com</p>
+        <p>Please note all fields in this form are only visible to Kate, Ben, and the web master Simon.</p>
+        <p>If you have any questions relating to this form, please reach out to Simon, Emma, or Janine D. or to the bride or groom. We are very happy to help! Thank you for your kind generosity. Looking forward to the big day!</p>
+        <a href="https://www.theknot.com/kate-h-and-ben-d" class="button">Return to Kate and Ben's Wedding Website</a>
     `;
 }
 
