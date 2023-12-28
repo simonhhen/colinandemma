@@ -1,13 +1,18 @@
 @font-face {
-  font-family: 'denalova Regular';
+  font-family: 'ProximaNova Bold';
   font-style: normal;
-  font-weight: normal;
-  src: local('denalova Regular'), url('typefaces/denalova.woff') format('woff');
+  font-weight: bold;
+  src: local('ProximaNova Bold'), url('typefaces/ProximaNova-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'ProximaNova Semibold';
+  src: local('ProximaNova Semibold'), url('typefaces/ProximaNova-Semibold.woff2') format('woff2');
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  color: rgb(89, 106, 97);
+  font-family: 'ProximaNova Semibold', 'Open Sans', sans-serif;
+  color: #4A5F9A;
 }
 
 .icon {
@@ -25,7 +30,8 @@ body {
 h1 {
   margin-bottom: 8pt;
   margin-top: 0pt;
-  font-family: 'Cantata One', serif;
+  line-height: 0.8;
+  font-family: 'ProximaNova Bold', serif;
 }
 
 h2 {
@@ -33,76 +39,85 @@ h2 {
 }
 
 label {
-  font-family: 'Cantata One', serif;
   margin: 24pt 0 16pt;
-  color: rgb(89, 106, 97);
+  color: #4A5F9A;
   font-size: 16pt;
 }
 
 input {
-  font-size: 12pt;
+  font-size: 14pt;
   margin: -8pt -10pt;
   padding: 8pt;
-  border: solid 2pt lightgray;
-  border-radius: 8pt;
+  border: solid 2pt rgba(0,0,0,0.1);
 }
 
 .button {
-  font-family: 'Cantata One', serif;
+  font-family: 'Shrikhand', serif;
   font-size: 16pt;
   margin: 36pt -10pt;
   padding: 8pt;
   color: white;
-  background-color: rgba(89, 106, 97, 0.8);
+  background-color: #EDA6BF;
   border-radius: 8pt;
   cursor: pointer;
   transition: background-color 0.1s;
   display: block;
   text-align: center;
   text-decoration: none;
+  text-shadow: 2px 2px #4A5F9A, 4px 4px #B3A1E6;
   border: none;
 }
 
 .button:hover {
-  background-color: rgb(89, 106, 97);
+  background-color: #B3A1E6;
+  text-shadow: 2px 2px #4A5F9A, 4px 4px #EDA6BF;
 }
 
 .form-container {
-  margin: auto;
-  max-width: 494px;
+  padding: 10pt;
+}
+
+.selected-label {
+  font-family: 'Shrikhand', serif;
+  font-size: 20pt;
+  margin: 0 -10pt 8pt;
+  color: white;
+  background-color: #B3A1E6;
+  text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
+  padding: 8pt;
 }
 
 form {
-  margin-top: 8pt;
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
 .heading {
-  background-image: url('decorations/Floralgreeneryframe.png');
-  background-position: center;
-  background-repeat: no-repeat; 
-  background-size: contain; 
   display: flex;
   flex-direction: column;
-  padding-top: 106pt;
-  padding-bottom: 106pt;
+  padding-top: 64pt;
+  padding-bottom: 32pt;
 }
 
 .headline {
-  font-size: 16pt;
+  font-size: 36pt;
+  word-spacing: -0.1em;
 }
 
 .title {
-  font-family:'denalova Regular', cursive;
-  font-size: 42pt;
+  font-family:'Shrikhand';
+  font-size: 48pt;
+  line-height: 1.0;
+  color: white;
+  text-shadow: 4px 4px #4A5F9A, 8px 8px #B3A1E6, 12px 12px #EDA6BF;
+  background-color: #B2DCFF;
+  padding: 20px;
 }
 
 .container {
   margin: auto;
-  max-width: 768px;
-  text-align: center;
+  max-width: 580px;
 }
 
 .row {
@@ -117,7 +132,7 @@ form {
 }
 
 .item-title {
-  font-family: 'Cantata One', serif;
+  font-family: 'Shrikhand', serif;
   flex: 1;
   display: flex;
   align-items: center;
@@ -143,7 +158,6 @@ form {
   background-color: rgba(30, 62, 121, 0.08);
   padding: 8px;
   margin: 8px;
-  border-radius: 8px;
   position: relative;
   cursor: pointer;
 }
@@ -156,7 +170,6 @@ form {
 .item-image {
   width: 100%;
   margin-bottom: 6pt;
-  border-radius: 4px;
 }
 
 .item--purchased {
@@ -191,7 +204,6 @@ form {
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 8px;
   border: 2px solid rgb(89, 106, 97);
 }
 
@@ -200,7 +212,7 @@ form {
 }
 
 .selected-item {
-  font-size: 12pt;
+  font-size: 14pt;
 }
 
 .image-container {
@@ -218,13 +230,21 @@ form {
   align-items: center;
   margin: 24pt 0 16pt;
   text-align: left;
+  padding: 10pt;
 }
 
 .instructions {
-  font-size: 12pt;
+  font-size: 14pt;
   line-height: 1.5;
-  max-width: 480px;
   margin: 0;
+}
+
+.instructions-list ::marker {
+  color: #B3A1E6;
+}
+
+.instructions-list li {
+  margin: 8pt 0pt;
 }
 
 .progress-bar {
@@ -236,22 +256,36 @@ form {
 
 .progress-bar-container {
   height: 16px;
-  border-radius: 8px;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.75);
 }
 
 .lower-emphasis {
   font-style: italic;
-  color: rgba(0, 0, 0, 0.6);
+  
+  color: rgba(74, 94, 154, 0.75);
 }
 
-.bold {
-  font-weight: 900;
+.instructions-title {
+  font-family: 'Shrikhand', serif;
+  font-size: 20pt;
+  margin: -10pt -10pt 8pt;
+  color: white;
+  background-color: #EDA6BF;
+  text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
+  padding: 8pt;
+}
+
+.or {
+  font-family: 'Shrikhand';
+  text-align: center;
+  align-self: center;
 }
 
 .loading-container {
-  margin: 56pt 0;
+  margin: 56pt auto;
+  width: fit-content;
+  text-align: center;
 }
 
 .loader {
@@ -261,11 +295,18 @@ form {
   display: inline-block;
   background: 
   conic-gradient(white, white) padding-box,
-     conic-gradient(white 10%, rgb(89, 106, 97) 61.8%) border-box;
+     conic-gradient(white 10%, #EDA6BF 61.8%) border-box;
   border: 10px solid transparent;
   animation: rotation 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+.one-or-other {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
 
 @keyframes rotation {

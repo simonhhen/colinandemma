@@ -121,9 +121,9 @@ function addContribution() {
 function showForm() {
     document.getElementById('form-container').innerHTML = `
         <form>
-            <label>Selected item</label>
+            <label class="selected-label">Selected item</label>
             <div id="selected-item" class="selected-item">${TEXT.NO_SELECTION}</div>
-            <label>Name</label>
+            <label>Your name</label>
             <input type="text" placeholder="Name" id="contribution-name">
             <label>Contribution amount</label>
             <input type="number" placeholder="0" id="contribution-amount">
