@@ -10,8 +10,13 @@
   src: local('ProximaNova Semibold'), url('typefaces/ProximaNova-Semibold.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'ProximaNova Regular';
+  src: local('ProximaNova Regular'), url('typefaces/ProximaNova-Regular.woff2') format('woff2');
+}
+
 body {
-  font-family: 'ProximaNova Semibold', 'Open Sans', sans-serif;
+  font-family: 'ProximaNova Regular', 'Open Sans', sans-serif;
   color: #4A5F9A;
 }
 
@@ -241,6 +246,7 @@ form {
 
 .instructions-list ::marker {
   color: #B3A1E6;
+  font-family: 'ProximaNova Semibold';
 }
 
 .instructions-list li {
