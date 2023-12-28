@@ -133,7 +133,7 @@ form {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 10pt;
-  max-width: 930px;
+  max-width: 900px;
   margin: 24pt auto;
 }
 
@@ -228,7 +228,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 24pt 0 16pt;
+  margin: 24pt auto 16pt;
   text-align: left;
   padding: 10pt;
 }
@@ -270,7 +270,6 @@ form {
 .instructions-title {
   font-family: 'Shrikhand', serif;
   font-size: 20pt;
-  margin: -10pt -10pt 8pt;
   color: white;
   background-color: #EDA6BF;
   text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
