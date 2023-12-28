@@ -216,15 +216,9 @@ client.get('items').then((items) => {
 
         itemContainer.appendChild(item);
 
-        if (c % 3 === 0) {
-            currentRow = document.createElement('div');
-            currentRow.className = 'row';
-            containerNode.appendChild(currentRow);
-        }
-
         allItems[element.id] = element;
         
-        currentRow.appendChild(itemContainer);
+        containerNode.appendChild(itemContainer);
     }
 });
 

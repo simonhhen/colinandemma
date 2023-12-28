@@ -125,15 +125,10 @@ form {
   max-width: 580px;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
-}
-
-.item-container {
-  flex: 1;
-  max-width: 33.33%;
-  display: flex;
+.item-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10pt;
 }
 
 .item-title {
@@ -148,11 +143,6 @@ form {
 }
 
 @media only screen and (max-width: 450px) {
-  .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .item-container {
     max-width: none;
     width: 75%;
@@ -164,8 +154,8 @@ form {
   flex-direction: column;
   width: 100%;
   background-color: rgba(74, 94, 154, 0.08);
-  padding: 8px;
-  margin: 8px;
+  padding: 10pt;
+  margin: 10pt;
   position: relative;
   cursor: pointer;
 }
@@ -177,7 +167,8 @@ form {
 
 .item-image {
   width: 100%;
-  margin-bottom: 6pt;
+  margin-top: 4pt;
+  margin-bottom: 4pt;
 }
 
 .item--purchased {
@@ -213,6 +204,7 @@ form {
 
 .item--selected .selected-icon {
   visibility: visible;
+  color: #EDA6BF;
 }
 
 .selected-item {
