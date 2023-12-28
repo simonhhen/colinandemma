@@ -137,17 +137,17 @@ function showThankYou(name, amount) {
     document.getElementById('form-container').innerHTML= "";
     document.getElementById('instructions').innerHTML = `
         <h3>Thank you for contributing $${amount} toward “${name}”!</h3>
-        <p><b>Reminder:</b></p><p><b>Contributions can be made by cheque or etransfer to:</b></p>
-        <address>Kate Henderson or Ben Segal Daly<br/>
-        1319 26th Avenue E<br/>
-        Vancouver, BC<br/>
-        V5V 2J9
-        </address>
-        <p>Or</p>
-        <p>hendersondkate@gmail.com</p>
-        <p>Please note all fields in this form are only visible to Kate, Ben, and the web master Simon.</p>
-        <p>If you have any questions relating to this form, please reach out to Simon, Emma, or Janine D. or to the bride or groom. We are very happy to help! Thank you for your kind generosity. Looking forward to the big day!</p>
-        <a href="https://www.theknot.com/kate-h-and-ben-d" class="button">Return to Kate and Ben's Wedding Website</a>
+            <ul class="one-or-other">
+            <li><address>Ryan Heney or Simon Henderson<br/>
+                118 ST PETER STREET<br/>
+                WHITBY ON  L1N 1J1
+                </address></li>
+            <span class="or">or</span>
+            <li>simon_henderson@rogers.com</li>
+            </ul>
+          <p>*<i>Please note all fields in this form are only visible to Ryan and Simon</i></p>
+          <p>If you have any questions relating to this form, please reach out to Janine or either of the grooms. We are happy to help! Thank you for your generosity.</p>
+        <a href="https://www.theknot.com/ryanandsimon" class="button">Return to Ryan & Simon&rsquo;s wedding website</a>
     `;
 }
 

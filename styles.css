@@ -29,14 +29,14 @@ body {
 }
 
 ::placeholder {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'ProximaNova Regular', sans-serif;
 }
 
 h1 {
   margin-bottom: 8pt;
   margin-top: 0pt;
   line-height: 0.8;
-  font-family: 'ProximaNova Bold', serif;
+  font-family: 'ProximaNova Bold', sans-serif;
 }
 
 h2 {
@@ -137,11 +137,14 @@ form {
 }
 
 .item-title {
-  font-family: 'Shrikhand', serif;
+  font-family: 'ProximaNova Bold';
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.raised-details {
+  font-family: 'Shrikhand', serif;
 }
 
 @media only screen and (max-width: 450px) {
@@ -160,7 +163,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgba(30, 62, 121, 0.08);
+  background-color: rgba(74, 94, 154, 0.08);
   padding: 8px;
   margin: 8px;
   position: relative;
@@ -168,7 +171,7 @@ form {
 }
 
 .item:not(.item--purchased):hover {
-  background-color: rgba(89, 106, 97, 0.2);
+  background-color: rgba(74, 94, 154, 0.2);
   transition: background-color 0.1s;
 }
 
@@ -179,13 +182,13 @@ form {
 
 .item--purchased {
   color: white;
-  border: 2px solid rgb(89, 106, 97);
-  background-color: rgb(89, 106, 97);
+  border: 2px solid #B3A1E6;
+  background-color: #B3A1E6;
   cursor: auto;
 }
 
 .purchased-icon {
-  color: rgb(14, 34, 70);
+  color: #EDA6BF;
 }
 
 .item--purchased .purchased-icon {
@@ -197,10 +200,6 @@ form {
   opacity: 0.5;
 }
 
-.item--purchased:hover {
-  background-color: rgb(89, 106, 97);
-}
-
 .item--selected:after {
   content: '';
   display: block;
@@ -209,7 +208,7 @@ form {
   bottom: 0;
   left: 0;
   right: 0;
-  border: 2px solid rgb(89, 106, 97);
+  border: 2px solid #EDA6BF;
 }
 
 .item--selected .selected-icon {
@@ -255,7 +254,7 @@ form {
 
 .progress-bar {
   height: 100%;
-  background-color: rgb(89, 106, 97);
+  background-color: #B3A1E6;
   transition: width 1s;
   transition-timing-function: ease-in-out;
 }
