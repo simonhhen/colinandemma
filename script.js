@@ -159,8 +159,6 @@ client.get('items').then((items) => {
     containerNode.innerHTML = "";
     for (let c = 0; c < items.length; c++) {
         let element = items[c];
-        const itemContainer = document.createElement('div');
-        itemContainer.className = 'item-container';
         const item = document.createElement('div');
         item.className = 'item';
         item.id = element.id;
@@ -214,11 +212,9 @@ client.get('items').then((items) => {
         raisedDetails.appendChild(progressBarContainer);
         item.appendChild(raisedDetails)
 
-        itemContainer.appendChild(item);
-
         allItems[element.id] = element;
         
-        containerNode.appendChild(itemContainer);
+        containerNode.appendChild(item);
     }
 });
 
