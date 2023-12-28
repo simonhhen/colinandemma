@@ -152,7 +152,6 @@ form {
 .item {
   display: flex;
   flex-direction: column;
-  width: 100%;
   background-color: rgba(74, 94, 154, 0.08);
   padding: 10pt;
   position: relative;
