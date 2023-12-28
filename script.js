@@ -3,7 +3,7 @@ const purchased = [];
 const TEXT = {
     NO_SELECTION: `<span class="lower-emphasis">Please select an item above.</span>`
 };
-const SERVER_NAME = "https://ryanandsimon-api.vercel.app/";
+const SERVER_NAME = "https://simonandryan-api.onrender.com/";
 
 var HttpClient = function() {
     this.get = function(url) {
