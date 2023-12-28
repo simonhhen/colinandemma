@@ -126,6 +126,7 @@ form {
 
 .text-max-width {
   max-width: 580px;
+  margin: auto;
 }
 
 .item-grid {
@@ -133,6 +134,7 @@ form {
   grid-template-columns: auto auto auto;
   gap: 10pt;
   max-width: 930px;
+  margin: 24pt auto;
 }
 
 .item-title {
