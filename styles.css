@@ -78,10 +78,6 @@ input {
   text-shadow: 2px 2px #4A5F9A, 4px 4px #EDA6BF;
 }
 
-.form-container {
-  padding: 10pt;
-}
-
 .selected-label {
   font-family: 'Shrikhand', serif;
   font-size: 20pt;
@@ -96,6 +92,7 @@ form {
   text-align: left;
   display: flex;
   flex-direction: column;
+  padding: 0 10pt;
 }
 
 .heading {
@@ -286,6 +283,7 @@ form {
   margin: 56pt auto;
   width: fit-content;
   text-align: center;
+  grid-column: 1 / span 3;
 }
 
 .loader {
