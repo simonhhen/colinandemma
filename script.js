@@ -146,7 +146,7 @@ function showThankYou(name, amount) {
             <li>simon_henderson@rogers.com</li>
             </ul>
           <p>*<i>Please note all fields in this form are only visible to Ryan and Simon</i></p>
-          <p>If you have any questions relating to this form, please reach out to Janine or either of the grooms. We are happy to help! Thank you for your generosity.</p>
+          <p>If you have any questions relating to this form, please reach out to either of the grooms. We are happy to help! Thank you for your generosity.</p>
         <a href="https://www.theknot.com/ryanandsimon" class="button">Return to Ryan & Simon&rsquo;s wedding website</a>
     `;
 }
