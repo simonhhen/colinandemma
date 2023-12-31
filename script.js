@@ -167,6 +167,12 @@ client.get('items').then((items) => {
         const title = document.createElement('h3');
         title.className = 'item-title';
         title.innerText = element.name;
+
+        const url = document.createElement('a');
+        if (element.url) {
+            url.href = element.url;
+            url.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+        }
         
         const raisedDetails = document.createElement('div');
         raisedDetails.className = 'raised-details';
@@ -207,6 +213,9 @@ client.get('items').then((items) => {
         checkMark.className = "far fa-check-circle icon selected-icon";
         item.appendChild(checkMark);
         item.appendChild(title);
+        if (element.url) {
+            item.appendChild(url);
+        }
         item.appendChild(imageContainer);
         raisedDetails.appendChild(fundsRaised);
         raisedDetails.appendChild(progressBarContainer);
