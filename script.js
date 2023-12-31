@@ -173,6 +173,7 @@ client.get('items').then((items) => {
             url.className = 'item-url';
             url.href = element.url;
             const urlIcon = document.createElement('i');
+            urlIcon.className = 'fas fa-arrow-up-right-from-square';
             url.appendChild(urlIcon);
             if (element.url) {
                 title.appendChild(url);
