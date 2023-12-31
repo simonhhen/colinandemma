@@ -168,10 +168,14 @@ client.get('items').then((items) => {
         title.className = 'item-title';
         title.innerText = element.name;
 
-        const url = document.createElement('a');
         if (element.url) {
+            const url = document.createElement('a');
+            url.className = 'item-url';
             url.href = element.url;
-            url.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+            url.innerHTML = '<i class="fas fa-arrow-up-right-from-square"></i>';
+            if (element.url) {
+                title.appendChild(url);
+            }
         }
         
         const raisedDetails = document.createElement('div');
@@ -213,9 +217,6 @@ client.get('items').then((items) => {
         checkMark.className = "far fa-check-circle icon selected-icon";
         item.appendChild(checkMark);
         item.appendChild(title);
-        if (element.url) {
-            item.appendChild(url);
-        }
         item.appendChild(imageContainer);
         raisedDetails.appendChild(fundsRaised);
         raisedDetails.appendChild(progressBarContainer);

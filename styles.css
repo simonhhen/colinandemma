@@ -28,6 +28,11 @@ body {
   font-size: 16pt;
 }
 
+.item-url {
+  font-size: 16pt;
+  color: #EDA6BF;
+}
+
 ::placeholder {
   font-family: 'ProximaNova Regular', sans-serif;
 }
