@@ -173,7 +173,7 @@ client.get('items').then((items) => {
             url.className = 'item-url';
             url.href = element.url;
             const urlIcon = document.createElement('i');
-            urlIcon.appendChild(urlIcon);
+            url.appendChild(urlIcon);
             if (element.url) {
                 title.appendChild(url);
             }
