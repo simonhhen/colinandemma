@@ -168,19 +168,6 @@ client.get('items').then((items) => {
         title.className = 'item-title';
         title.innerText = element.name;
 
-        if (element.url) {
-            const url = document.createElement('a');
-            url.className = 'item-url';
-            url.href = element.url;
-            url.target = '_blank';
-            const urlIcon = document.createElement('i');
-            urlIcon.className = 'fas fa-arrow-up-right-from-square';
-            url.appendChild(urlIcon);
-            if (element.url) {
-                title.appendChild(url);
-            }
-        }
-        
         const raisedDetails = document.createElement('div');
         raisedDetails.className = 'raised-details';
 
