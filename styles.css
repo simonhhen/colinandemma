@@ -133,7 +133,7 @@ form {
 
 .item-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10pt;
   max-width: 900px;
   margin: 24pt auto;
