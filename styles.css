@@ -240,11 +240,12 @@ form {
   font-size: 1.4rem;
   line-height: 1.5;
   margin: 0;
-  font-family: 'Libre Baskerville', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
 }
 
 .instructions-list ::marker {
   color: #B3A1E6;
+  font-size: 1.6rem;
   font-family: 'ProximaNova Semibold';
 }
 
