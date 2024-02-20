@@ -1,3 +1,7 @@
+html {
+  font-size: 14px;
+}
+
 @font-face {
   font-family: 'ProximaNova Bold';
   font-style: normal;
@@ -218,6 +222,7 @@ form {
 }
 
 .funds-raised {
+  font-size: 1.4rem;
   margin-bottom: 3pt;
   display: block;
 }
@@ -235,6 +240,7 @@ form {
   font-size: 1.4rem;
   line-height: 1.5;
   margin: 0;
+  font-family: 'Merriweather', sans-serif;
 }
 
 .instructions-list ::marker {
