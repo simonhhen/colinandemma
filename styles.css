@@ -25,11 +25,11 @@ body {
   top: 6pt;
   right: 6pt;
   visibility: hidden;
-  font-size: 16pt;
+  font-size: 1.6em;
 }
 
 .item-url {
-  font-size: 16pt;
+  font-size: 1.6em;
   color: #EDA6BF;
 }
 
@@ -49,13 +49,13 @@ h2 {
 }
 
 label {
-  margin: 24pt 0 16pt;
+  margin: 24pt 0 1.6em;
   color: #4A5F9A;
-  font-size: 16pt;
+  font-size: 1.6em;
 }
 
 input {
-  font-size: 14pt;
+  font-size: 1.4em;
   margin: -8pt -10pt;
   padding: 8pt;
   border: solid 2pt rgba(0,0,0,0.1);
@@ -63,7 +63,7 @@ input {
 
 .button {
   font-family: 'Shrikhand', serif;
-  font-size: 16pt;
+  font-size: 1.6em;
   margin: 36pt -10pt;
   padding: 8pt;
   color: white;
@@ -85,7 +85,7 @@ input {
 
 .selected-label {
   font-family: 'Shrikhand', serif;
-  font-size: 20pt;
+  font-size: 2.0em;
   margin: 0 -10pt 8pt;
   color: white;
   background-color: #B3A1E6;
@@ -108,13 +108,13 @@ form {
 }
 
 .headline {
-  font-size: 36pt;
+  font-size: 3.6em;
   word-spacing: -0.1em;
 }
 
 .title {
   font-family:'Shrikhand';
-  font-size: 48pt;
+  font-size: 4.8em;
   line-height: 1.0;
   color: white;
   text-shadow: 4px 4px #4A5F9A, 8px 8px #B3A1E6, 12px 12px #EDA6BF;
@@ -142,7 +142,7 @@ form {
 .item-title {
   font-family: 'ProximaNova Bold';
   flex: 1;
-  font-size: xx-large;
+  font-size: 3.6em;
   margin: 12pt 0pt;
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@ form {
 }
 
 .selected-item {
-  font-size: 14pt;
+  font-size: 1.4em;
 }
 
 .image-container {
@@ -239,7 +239,7 @@ form {
 }
 
 .instructions {
-  font-size: 14pt;
+  font-size: 1.4em;
   line-height: 1.5;
   margin: 0;
 }
@@ -274,7 +274,7 @@ form {
 
 .instructions-title {
   font-family: 'Shrikhand', serif;
-  font-size: 20pt;
+  font-size: 2.0em;
   color: white;
   background-color: #EDA6BF;
   text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
@@ -325,7 +325,15 @@ form {
 }
 
 
-@media screen and (min-width: 580px) {
+@media screen and (max-width: 720px) {
+  .text-max-width {
+    max-width: 100%;
+  }
+
+  .container {
+    padding: 0 10pt;
+  }
+
   .item-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
