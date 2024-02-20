@@ -26,8 +26,8 @@ body {
 
 .icon {
   position: absolute;
-  top: 6pt;
-  right: 6pt;
+  top: 0.5rem;
+  right: 0.5rem;
   visibility: hidden;
   font-size: 1.6rem;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 h1 {
-  margin-bottom: 8pt;
+  margin-bottom: 0.5rem;
   margin-top: 0pt;
   line-height: 0.8;
   font-family: 'ProximaNova Bold', sans-serif;
@@ -53,26 +53,26 @@ h2 {
 }
 
 label {
-  margin: 24pt 0 1.6rem;
+  margin: 2rem 0 1.6rem;
   color: #4A5F9A;
   font-size: 1.6rem;
 }
 
 input {
   font-size: 1.4rem;
-  margin: -8pt -10pt;
-  padding: 8pt;
+  margin: -1rem -1rem;
+  padding: 1rem;
   border: solid 2pt rgba(0,0,0,0.1);
 }
 
 .button {
   font-family: 'Shrikhand', serif;
   font-size: 1.6rem;
-  margin: 36pt -10pt;
-  padding: 8pt;
+  margin: 2.0rem -1rem;
+  padding: 1rem;
   color: white;
   background-color: #EDA6BF;
-  border-radius: 8pt;
+  border-radius: 1rem;
   cursor: pointer;
   transition: background-color 0.1s;
   display: block;
@@ -90,25 +90,25 @@ input {
 .selected-label {
   font-family: 'Shrikhand', serif;
   font-size: 2.0rem;
-  margin: 0 -10pt 8pt;
+  margin: 0 -1rem 1rem;
   color: white;
   background-color: #B3A1E6;
   text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
-  padding: 8pt;
+  padding: 0.5rem;
 }
 
 form {
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding: 0 10pt;
+  padding: 0 1rem;
 }
 
 .heading {
   display: flex;
   flex-direction: column;
-  padding-top: 64pt;
-  padding-bottom: 32pt;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 }
 
 .headline {
@@ -138,16 +138,16 @@ form {
 .item-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10pt;
+  gap: 1rem;
   max-width: 900px;
-  margin: 24pt auto;
+  margin: 1.5rem auto;
 }
 
 .item-title {
   font-family: 'ProximaNova Bold';
   flex: 1;
   font-size: 2.4rem;
-  margin: 12pt 0pt;
+  margin: 1.2rem 0pt;
   display: flex;
   align-items: center;
   line-height: 1.0;
@@ -161,7 +161,7 @@ form {
   display: flex;
   flex-direction: column;
   background-color: rgba(74, 94, 154, 0.08);
-  padding: 10pt;
+  padding: 1rem;
   position: relative;
   cursor: pointer;
 }
@@ -173,8 +173,8 @@ form {
 
 .item-image {
   width: 100%;
-  margin-top: 4pt;
-  margin-bottom: 4pt;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .item--purchased {
@@ -223,7 +223,7 @@ form {
 
 .funds-raised {
   font-size: 1.4rem;
-  margin-bottom: 3pt;
+  margin-bottom: 0.5rem;
   display: block;
 }
 
@@ -231,9 +231,9 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 24pt auto 16pt;
+  margin: 1.5rem auto 1rem;
   text-align: left;
-  padding: 10pt;
+  padding: 1rem;
 }
 
 .instructions {
@@ -250,7 +250,7 @@ form {
 }
 
 .instructions-list li {
-  margin: 8pt 0pt;
+  margin: 1rem 0pt;
 }
 
 .progress-bar {
@@ -278,7 +278,7 @@ form {
   color: white;
   background-color: #EDA6BF;
   text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
-  padding: 8pt;
+  padding: 1rem;
 }
 
 .or {
@@ -288,15 +288,15 @@ form {
 }
 
 .loading-container {
-  margin: 56pt auto;
+  margin: 3.5rem auto;
   width: fit-content;
   text-align: center;
   grid-column: 1 / span 3;
 }
 
 .loader {
-  height: 48pt;
-  width: 48pt;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
   display: inline-block;
   background: 
@@ -335,7 +335,7 @@ form {
   }
 
   .container {
-    padding: 0 10pt;
+    padding: 0 1.0rem;
   }
 
   .item-grid {
