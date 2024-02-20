@@ -319,8 +319,8 @@ form {
 
 
 @media screen and (max-device-width: 750px) {
-  .html {
-    font-size: 32px;
+  html {
+    font-size: 24px;
   }
 
   .text-max-width {
