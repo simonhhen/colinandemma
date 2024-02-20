@@ -25,11 +25,11 @@ body {
   top: 6pt;
   right: 6pt;
   visibility: hidden;
-  font-size: 1.6em;
+  font-size: 1.6rem;
 }
 
 .item-url {
-  font-size: 1.6em;
+  font-size: 1.6rem;
   color: #EDA6BF;
 }
 
@@ -49,13 +49,13 @@ h2 {
 }
 
 label {
-  margin: 24pt 0 1.6em;
+  margin: 24pt 0 1.6rem;
   color: #4A5F9A;
-  font-size: 1.6em;
+  font-size: 1.6rem;
 }
 
 input {
-  font-size: 1.4em;
+  font-size: 1.4rem;
   margin: -8pt -10pt;
   padding: 8pt;
   border: solid 2pt rgba(0,0,0,0.1);
@@ -63,7 +63,7 @@ input {
 
 .button {
   font-family: 'Shrikhand', serif;
-  font-size: 1.6em;
+  font-size: 1.6rem;
   margin: 36pt -10pt;
   padding: 8pt;
   color: white;
@@ -85,7 +85,7 @@ input {
 
 .selected-label {
   font-family: 'Shrikhand', serif;
-  font-size: 2.0em;
+  font-size: 2.0rem;
   margin: 0 -10pt 8pt;
   color: white;
   background-color: #B3A1E6;
@@ -108,13 +108,13 @@ form {
 }
 
 .headline {
-  font-size: 3.6em;
-  word-spacing: -0.1em;
+  font-size: 3.6rem;
+  word-spacing: -0.1rem;
 }
 
 .title {
   font-family:'Shrikhand';
-  font-size: 4.8em;
+  font-size: 4.8rem;
   line-height: 1.0;
   color: white;
   text-shadow: 4px 4px #4A5F9A, 8px 8px #B3A1E6, 12px 12px #EDA6BF;
@@ -142,7 +142,7 @@ form {
 .item-title {
   font-family: 'ProximaNova Bold';
   flex: 1;
-  font-size: 3.6em;
+  font-size: 2.4rem;
   margin: 12pt 0pt;
   display: flex;
   align-items: center;
@@ -151,13 +151,6 @@ form {
 
 .raised-details {
   font-family: 'Shrikhand', serif;
-}
-
-@media only screen and (max-width: 450px) {
-  .item-container {
-    max-width: none;
-    width: 75%;
-  }
 }
 
 .item {
@@ -217,7 +210,7 @@ form {
 }
 
 .selected-item {
-  font-size: 1.4em;
+  font-size: 1.4rem;
 }
 
 .image-container {
@@ -239,7 +232,7 @@ form {
 }
 
 .instructions {
-  font-size: 1.4em;
+  font-size: 1.4rem;
   line-height: 1.5;
   margin: 0;
 }
@@ -274,7 +267,7 @@ form {
 
 .instructions-title {
   font-family: 'Shrikhand', serif;
-  font-size: 2.0em;
+  font-size: 2.0rem;
   color: white;
   background-color: #EDA6BF;
   text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
@@ -325,7 +318,11 @@ form {
 }
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 750px) {
+  .html {
+    font-size: 32px;
+  }
+
   .text-max-width {
     max-width: 100%;
   }
