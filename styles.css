@@ -142,8 +142,11 @@ form {
 .item-title {
   font-family: 'ProximaNova Bold';
   flex: 1;
+  font-size: xx-large;
+  margin: 12pt 0pt;
   display: flex;
   align-items: center;
+  line-height: 1.0;
 }
 
 .raised-details {
