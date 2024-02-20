@@ -74,13 +74,13 @@ input {
   display: block;
   text-align: center;
   text-decoration: none;
-  text-shadow: 2pt 2pt #4A5F9A, 4pt 4pt #B3A1E6;
+  text-shadow: 2px 2px #4A5F9A, 4px 4px #B3A1E6;
   border: none;
 }
 
 .button:hover {
   background-color: #B3A1E6;
-  text-shadow: 2pt 2pt #4A5F9A, 4pt 4pt #EDA6BF;
+  text-shadow: 2px 2px #4A5F9A, 4px 4px #EDA6BF;
 }
 
 .selected-label {
@@ -89,7 +89,7 @@ input {
   margin: 0 -10pt 8pt;
   color: white;
   background-color: #B3A1E6;
-  text-shadow: 2pt 2pt #4A5F9A, 4pt 4pt #B2DCFF;
+  text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
   padding: 8pt;
 }
 
@@ -117,9 +117,9 @@ form {
   font-size: 48pt;
   line-height: 1.0;
   color: white;
-  text-shadow: 4pt 4pt #4A5F9A, 8pt 8pt #B3A1E6, 12pt 12pt #EDA6BF;
+  text-shadow: 4px 4px #4A5F9A, 8px 8px #B3A1E6, 12px 12px #EDA6BF;
   background-color: #B2DCFF;
-  padding: 20pt;
+  padding: 20px;
 }
 
 .container {
@@ -127,7 +127,7 @@ form {
 }
 
 .text-max-width {
-  max-width: 580pt;
+  max-width: 580px;
   margin: auto;
 }
 
@@ -135,7 +135,7 @@ form {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10pt;
-  max-width: 900pt;
+  max-width: 900px;
   margin: 24pt auto;
 }
 
@@ -153,7 +153,7 @@ form {
   font-family: 'Shrikhand', serif;
 }
 
-@media only screen and (max-width: 450pt) {
+@media only screen and (max-width: 450px) {
   .item-container {
     max-width: none;
     width: 75%;
@@ -182,7 +182,7 @@ form {
 
 .item--purchased {
   color: white;
-  border: 2pt solid #B3A1E6;
+  border: 2px solid #B3A1E6;
   background-color: #B3A1E6;
   cursor: auto;
 }
@@ -208,7 +208,7 @@ form {
   bottom: 0;
   left: 0;
   right: 0;
-  border: 2pt solid #EDA6BF;
+  border: 2px solid #EDA6BF;
 }
 
 .item--selected .selected-icon {
@@ -261,7 +261,7 @@ form {
 }
 
 .progress-bar-container {
-  height: 16pt;
+  height: 16px;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.75);
 }
@@ -277,7 +277,7 @@ form {
   font-size: 20pt;
   color: white;
   background-color: #EDA6BF;
-  text-shadow: 2pt 2pt #4A5F9A, 4pt 4pt #B2DCFF;
+  text-shadow: 2px 2px #4A5F9A, 4px 4px #B2DCFF;
   padding: 8pt;
 }
 
@@ -302,7 +302,7 @@ form {
   background: 
   conic-gradient(white, white) padding-box,
      conic-gradient(white 10%, #EDA6BF 61.8%) border-box;
-  border: 10pt solid transparent;
+  border: 10px solid transparent;
   animation: rotation 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -325,7 +325,7 @@ form {
 }
 
 
-@media screen and (min-width: 580pt) {
+@media screen and (min-width: 580px) {
   .item-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
