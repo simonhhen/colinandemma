@@ -124,10 +124,7 @@ form {
   text-shadow: 4px 4px #4A5F9A, 8px 8px #B3A1E6, 12px 12px #EDA6BF;
   background-color: #B2DCFF;
   padding: 20px;
-
-  -webkit-font-smoothing: antialiased;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
 }
 
 .container {
